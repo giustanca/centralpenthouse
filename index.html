@@ -554,8 +554,8 @@ P.contacts=s=>{
   <div>${cir('pin')}<a ${ext(url(4,'APARTMENT ADDRESS'))}><span class="lbl">${tr('Apartment address','Indirizzo dell’appartamento')}</span><div class="nm">Via Ferdinando<br>Li Donni, 7</div><span style="color:var(--muted)">${tr('7th floor, with lift','7° piano, con ascensore')} ${ic('lift')}</span><small>Palermo</small></a></div>
  </div>
  <a class="airbnb" href="https://www.airbnb.com/rooms/28753201"><img src="${IMG.airbnb}" alt="Airbnb"><div><b>${tr('Our apartment on Airbnb','Il nostro appartamento su Airbnb')}</b><span>${tr('Photos, details and guest reviews of the listing','Foto, dettagli e recensioni degli ospiti dell’annuncio')}</span></div>${ic('chevR')}</a>
- ${h2('phonecall',tr('Emergency numbers','Numeri di emergenza'),'emergency')}
- <div class="emg">
+ ${h2('phonecall',tr('Emergency numbers','Numeri di emergenza'),'emergency',1)}
+ <div class="emg" style="margin-top:14px">
   <a class="main" href="tel:112"><b>112</b><span>${tr('European<br>emergency<br>number','Numero unico<br>europeo di<br>emergenza')}</span></a>
   <a href="tel:113"><b>113</b><span>${tr('State Police<br>(Polizia)','Polizia<br>di Stato')}</span></a>
   <a href="tel:115"><b>115</b><span>${tr('Fire<br>Department','Vigili<br>del Fuoco')}</span></a>
@@ -665,8 +665,7 @@ const plist=(page,rows,one)=>`<div class="list${one?' one':''}">${[0,1].map(c=>{
 /* 04 */
 P.around=s=>{
  const t=n=>`tel. ${tel(n,'')}`;
- return sheet(s,9,0,`<p class="note">${ic('walk')}<span>${tr('Distances and times are <b>on foot</b> from the apartment.','Distanze e tempi sono <b>a piedi</b> dall’appartamento.')}</span></p>
- ${h2('info',tr('Tourist Information Centre','Centro di informazioni turistiche'),'tourist',1)}
+ return sheet(s,9,0,`${h2('info',tr('Tourist Information Centre','Centro di informazioni turistiche'),'tourist',1)}
  ${plist(9,[['CIT Teatro Massimo','Piazza Verdi · '+tr('Visitor Centre inside the Teatro Massimo','Visitor Centre all’interno del Teatro Massimo'),'290 m',4],['CIT Bellini','Via Maqueda, 191 · Piazza Bellini · '+t('+39 091 7408022'),'1.2 km',16]],1)}
  ${h2('cross',tr('Pharmacies','Farmacie'),'pharmacies',1)}
  ${plist(9,[['Farmacia Cacace','Piazza S. Francesco di Paola, 51 · '+t('+39 091 588313'),'86 m',1],['Farmacia Tamburello','Piazza Sant’Oliva, 37 · '+t('+39 091 585735'),'180 m',2],['Farmacia Inglese','Via Mariano Stabile, 175 · '+t('+39 091 334482')+' · '+tr('open 7 days a week','aperta 7 giorni su 7'),'300 m',4]],1)}
