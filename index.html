@@ -565,8 +565,7 @@ P.contacts=s=>{
  <div class="row"><div class="t">${tr('Police · emergency','Polizia · emergenza')}</div>${tel('113')}</div>
  ${pol.map(([k,n,a,t])=>`<div class="row"><div><div class="t">${mp(4,k,n)}</div><div class="a">${a}</div></div>${tel(t)}</div>`).join('')}
  ${h2('cross',tr('Hospitals','Ospedali'),'p05',1)}
- <p class="note hn">${tr('Hospitals and emergency rooms closest to the apartment','Ospedali e pronto soccorso più vicini all’appartamento')}</p>
- <div class="cgrid">${hosp.map(([i,k,n,a,ts,nt])=>`<div class="card hosp">${cir(i)}<div><div class="t">${mp(5,k,n)}</div><div class="a">${a}</div></div><div class="tels">${ts.map(t=>tel(t)).join('')}</div></div>`).join('')}</div>
+ <div class="cgrid" style="margin-top:14px">${hosp.map(([i,k,n,a,ts,nt])=>`<div class="card hosp">${cir(i)}<div><div class="t">${mp(5,k,n)}</div><div class="a">${a}</div></div><div class="tels">${ts.map(t=>tel(t)).join('')}</div></div>`).join('')}</div>
  <div class="banner"><a class="n" href="tel:112">112</a><div>${tr('In an emergency, call the single European emergency number.','In caso di emergenza chiamate il numero unico europeo di emergenza.')}<br>${tr('Medical emergency','Emergenza sanitaria')}: <a href="tel:118"><b>118</b></a></div></div>`);
 };
 
@@ -1043,10 +1042,10 @@ html.mapmode #scrim{display:none!important}
 .mchips{position:absolute;top:10px;left:10px;right:62px;z-index:900;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px 2px 6px;transition:opacity .2s}
 .mchips::-webkit-scrollbar{display:none}
 html.mopen .mchips{opacity:0;pointer-events:none}
-.mpill{flex:none;display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 13px 0 5px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:13.5px;white-space:nowrap;cursor:pointer;box-shadow:0 2px 8px rgba(20,16,12,.14);transition:background .2s,border-color .2s}
-.mpill .pi{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--acc);color:#fff}
+.mpill{flex:none;display:inline-flex;align-items:center;gap:5px;height:28px;padding:0 10px 0 4px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:12.5px;white-space:nowrap;cursor:pointer;box-shadow:0 2px 8px rgba(20,16,12,.14);transition:background .2s,border-color .2s}
+.mpill .pi{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:var(--acc);color:#fff}
 [data-theme=night] .mpill .pi{color:#191613}
-.mpill .pi svg{width:13px;height:13px;display:block}
+.mpill .pi svg{width:11px;height:11px;display:block}
 .mpill[aria-pressed=false] .pi{opacity:.4;filter:saturate(.4)}
 .mpill[aria-pressed=false]{color:var(--muted)}
 .mpill[aria-pressed=true]{background:color-mix(in srgb,var(--acc) 15%,var(--card));border-color:var(--acc);color:var(--acc);font-weight:600}
