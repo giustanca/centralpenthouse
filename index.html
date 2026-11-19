@@ -71,7 +71,7 @@ main{transition:margin-left .22s ease}
 #rail .subs a{display:block;font-size:13.5px;color:var(--muted);text-decoration:none;padding:4px 10px 4px 0}
 #rail .subs a:hover{color:var(--acc)}
 #rail .hd{padding:16px 16px 12px;border-bottom:1px solid var(--line)}
-#rail .hd .eyebrow{margin:0 0 4px}
+#rail .hd .eyebrow{margin:2px 0;white-space:nowrap}
 #rail .hd b{display:block;font-size:20px;color:var(--blue);line-height:1.2}
 #rail .ft{padding:14px 16px 24px}
 #rail .ft a{display:flex;align-items:center;gap:10px;text-decoration:none;padding:6px 0;font-size:14.5px}
@@ -165,8 +165,8 @@ img{max-width:100%;height:auto;display:block}
 .toc-s{font-size:13.5px;color:var(--muted);line-height:1.5}
 .toc-s a{text-decoration:none}.toc-s a:hover,.toc-t:hover{text-decoration:underline}
 .cir{width:40px;height:40px;border-radius:50%;border:1.2px solid var(--acc);background:var(--panel);color:var(--acc);display:grid;place-items:center;font-size:19px;flex:none;text-decoration:none}
-.hint{display:flex;gap:10px;font-size:13.5px;color:var(--muted);margin-top:16px;align-items:flex-start}
-.hint .ic{color:var(--terra);font-size:17px;margin-top:2px}
+.hint{display:block;font-size:12px;color:var(--muted);margin-top:16px;text-align:justify;hyphens:manual;-webkit-hyphens:manual}
+.hint .ic{color:var(--terra);font-size:14px;vertical-align:-2px;margin-right:6px}
 .hint b{color:var(--ink)}
 
 /* section header */
@@ -767,7 +767,7 @@ function nav(id){const i=ORDER.indexOf(id),pv=ORDER[i-1],nx=ORDER[i+1];const t=x
 const RSUB={sights:[['City centre and Old town','Centro e città vecchia','p10'],['Arab-Norman Palermo','Palermo arabo-normanna','p11'],['Markets and seafront','Mercati e lungomare','p12']],'eat-drink':[['Restaurants & pizzerias','Ristoranti e pizzerie','p14'],['Street food','Street food','streetfood'],['Drinks','Drink','drinks']]};
 function rail(){const sid=page;let k=0;const item=(id,n,acc,icon,name)=>`<a style="--i:${k++}" class="ri${id===sid?' on':''}" data-acc="${acc}" href="#${id}" data-go="${id}" aria-label="${name}"${id===sid?' aria-current="page"':''}><span class="rn">${n}</span>${ic(icon)}<span class="nm">${name}</span></a>`+(RSUB[id]?`<div class="subs"><div>${RSUB[id].map(([en,it,an])=>`<a href="#${id}" data-go="${id}" data-anchor="${an}" style="--i:${k++}">${tr(en,it)}</a>`).join('')}</div></div>`:'');
  const s=SECTIONS.find(x=>x.id===sid);
- return `<div class="hd"><div><b>Housebook</b></div></div>`
+ return `<div class="hd"><div><p class="eyebrow">Housebook · Palermo</p></div></div>`
  +item('home','H','blue','heart',tr('Welcome','Benvenuti'))
  +SECTIONS.map(x=>item(x.id,x.n,x.acc,x.icon,tr(...x.t))).join('')
  +`<div class="tools"><a style="--i:${k++}" class="ri tool" data-dl href="${PDF_HREF}" download="${PDF_FILE}" aria-label="${tr('Download the PDF','Scarica il PDF')}">${ic('download')}<span class="nm">${tr('Download the PDF','Scarica il PDF')}</span></a><button style="--i:${k++}" class="ri tool" data-print aria-label="${tr('Print the PDF','Stampa il PDF')}">${ic('printer')}<span class="nm">${tr('Print','Stampa')}</span></button></div>`
