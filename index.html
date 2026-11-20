@@ -853,7 +853,7 @@ function render(){
  const on=document.querySelector('#rail .ri.on');if(on&&on.scrollIntoViewIfNeeded)on.scrollIntoViewIfNeeded(false);
  if(pendingAnchor){const el=document.getElementById(pendingAnchor);pendingAnchor=null;if(el){el.scrollIntoView();return}}
 }
-function go(id,anchor){pendingAnchor=anchor||null;const same=page===id;page=id;try{if((location.hash||'#home')!=='#'+id)location.hash=id}catch(e){}render();if(!pendingAnchor&&!anchor)window.scrollTo(0,0);if(same&&anchor){const el=document.getElementById(anchor);if(el)el.scrollIntoView()}}
+function go(id,anchor){if(page===id&&anchor){const el=document.getElementById(anchor);if(el){setMenu(false);el.scrollIntoView();return}}pendingAnchor=anchor||null;const same=page===id;page=id;try{if((location.hash||'#home')!=='#'+id)location.hash=id}catch(e){}render();if(!pendingAnchor&&!anchor)window.scrollTo(0,0);if(same&&anchor){const el=document.getElementById(anchor);if(el)el.scrollIntoView()}}
 window.addEventListener('hashchange',()=>{const h=current()||'home';if(h!==page){page=h;render();window.scrollTo(0,0)}});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){const m=document.querySelector('.modal');if(m)m.remove();setMenu(false)}});
 document.addEventListener('click',e=>{
