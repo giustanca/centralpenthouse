@@ -425,6 +425,8 @@ html.mapmode #rail::after{content:"";display:block;flex:none;height:10px}
 .tsw .topp{position:absolute;top:50%;right:7px;transform:translateY(-50%);display:grid;place-items:center;color:var(--muted);opacity:.55;pointer-events:none}.tsw .topp svg{width:12px;height:12px}[data-theme=night] .tsw .topp{right:auto;left:7px}
 #btnMenu.ibtn{font-size:20px}#btnMenu.ibtn:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
 html[lang=es] #btnLang .lflag{transform:translateX(22px);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 3'%3E%3Cpath fill='%23AA151B' d='M0 0h3v3H0z'/%3E%3Cpath fill='%23F1BF00' d='M0 .75h3v1.5H0z'/%3E%3C/svg%3E")}html[lang=es] #btnLang #lCode{right:auto;left:6.5px}#langMenu .fl-es{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 3'%3E%3Cpath fill='%23AA151B' d='M0 0h3v3H0z'/%3E%3Cpath fill='%23F1BF00' d='M0 .75h3v1.5H0z'/%3E%3C/svg%3E")}
+@media (min-width:1200px){.tgrid{align-items:stretch}.tgrid>.trip{display:flex;flex-direction:column;margin-bottom:0}.tgrid>.trip>.b{flex:1;display:flex;flex-direction:column}.tgrid>.trip>.b>.pills:last-child{margin-top:auto;padding-top:4px}}
+.trip>img{aspect-ratio:1461/284;height:auto;object-fit:cover;object-position:50% 50%;display:block}
 @keyframes mbtn{from{opacity:0;transform:rotate(-90deg) scale(.6)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){#rail,main,#scrim,#rail *{transition:none!important}#btnMenu svg{animation:none}}
 @media print{
