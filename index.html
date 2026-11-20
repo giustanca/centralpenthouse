@@ -419,6 +419,7 @@ main{transition:margin-left var(--dur) var(--ease)}
 .tip.on{opacity:1;transform:none}
 .tip:before{content:"";position:absolute;left:-5px;top:50%;margin-top:-5px;border:5px solid transparent;border-left:0;border-right-color:var(--ink)}
 #rail .ri .nm,#rail .ri.tool .nm{font-size:14px!important}#rail .subs a{font-size:12.5px!important}#rail .ft a,#rail .ft span{font-size:13px!important}
+html.mapmode #rail::after{content:"";display:block;flex:none;height:15px}
 @keyframes mbtn{from{opacity:0;transform:rotate(-90deg) scale(.6)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){#rail,main,#scrim,#rail *{transition:none!important}#btnMenu svg{animation:none}}
 @media print{
