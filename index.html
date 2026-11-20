@@ -1323,5 +1323,20 @@ document.addEventListener('click',e=>{
 if((location.hash||'')==='#map')page='map';render();
 })();
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Evita di contare più volte lo stesso ospite se ricarica la pagina nella stessa sessione
+    if (!sessionStorage.getItem('housebook_visitato')) {
+      fetch('https://giusepehome.duckdns.org/api/webhook/197519772013ema', {
+        method: 'POST',
+        mode: 'no-cors'
+      })
+      .then(() => {
+        sessionStorage.setItem('housebook_visitato', 'true');
+      })
+      .catch(err => console.error(err));
+    }
+  });
+</script>
 </body>
 </html>
