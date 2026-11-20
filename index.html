@@ -1233,7 +1233,7 @@ let mopen=false;
 function renderChips(){const el=$('mChips');if(!el)return;
  el.innerHTML=`<button class="mpill mlistp" data-mopen><span class="pi">${mic('list')}</span>${tr('List','Elenco')}</button>`
  +CATS.filter(c=>c.id!=='home').map(c=>`<button class="mpill" data-mcat="${c.id}" data-acc="${c.acc}" aria-pressed="${active.has(c.id)}"><span class="pi">${mic(c.icon)}</span>${tr(...SHORTP[c.id])}</button>`).join('')}
-function setMOpen(o){mopen=o;const h=document.documentElement;h.classList.toggle('mopen',o);const r=$('rail');if(page==='map')r.classList.toggle('open',o);
+function setMOpen(o){mopen=o;const h=document.documentElement;h.classList.toggle('mopen',o);const r=$('rail');if(o&&page==='map'){r.scrollTop=0;r.querySelectorAll('*').forEach(el=>{if(el.scrollTop)el.scrollTop=0})}if(page==='map')r.classList.toggle('open',o);
  const b=$('btnMenu');if(page==='map'){b.innerHTML=o?XSVG:ic('chevL');b.dataset.st=o?'x':'chevL';b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?tr('Close the map menu','Chiudi il menu della mappa'):tr('Back to the housebook','Torna all’housebook'));b.title=b.getAttribute('aria-label')}}
 const XSVG='<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
 document.body.insertBefore(wrap,document.getElementById('printAll'));
@@ -1299,8 +1299,8 @@ function setCats(a){active=a;store.set('hb-map-cats',JSON.stringify([...active])
 
 /* --- 4. eventi --- */
 document.addEventListener('click',e=>{
- if(page==='map'&&e.target.closest('#btnMenu')){e.preventDefault();e.stopPropagation();if(mopen){setMOpen(false);return}go(lastPage);return}
- if(e.target.closest('[data-go-back]')){e.preventDefault();e.stopPropagation();setMOpen(false);go(lastPage);return}
+ if(page==='map'&&e.target.closest('#btnMenu')){e.preventDefault();e.stopPropagation();if(mopen){setMOpen(false);return}go('home');return}
+ if(e.target.closest('[data-go-back]')){e.preventDefault();e.stopPropagation();setMOpen(false);go('home');return}
  if(e.target.closest('[data-mclose]')){e.preventDefault();e.stopPropagation();setMOpen(false);return}
  if(e.target.closest('[data-mhome]')){e.preventDefault();e.stopPropagation();if(!document.documentElement.classList.contains('wide'))setMOpen(false);map.flyTo(POIS[0].ll,17,{duration:.6});map.once('moveend',()=>MK.home.m.openPopup());return}
  if(e.target.closest('#mScrim')){e.preventDefault();e.stopPropagation();setMOpen(false);return}
