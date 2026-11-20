@@ -36,10 +36,10 @@ button{font:inherit;color:inherit;cursor:pointer}
 .bar-in{padding:8px 12px;min-height:56px;box-sizing:border-box;display:flex;align-items:center;gap:10px}
 .ibtn{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--card);display:grid;place-items:center;font-size:19px;color:var(--muted);flex:none;text-decoration:none}
 .ibtn:hover{color:var(--ink);border-color:var(--muted)}
-.tsw{position:relative;width:42px;height:24px;flex:none;border-radius:999px;border:1px solid var(--line);background:var(--panel);padding:0;cursor:pointer}
+.tsw{position:relative;width:46px;height:24px;flex:none;border-radius:999px;border:1px solid var(--line);background:var(--panel);padding:0;cursor:pointer}
 .tsw .knob{position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:var(--card);display:grid;place-items:center;color:var(--ochre);box-shadow:0 1px 3px rgba(0,0,0,.18);transition:transform .25s ease}
 .tsw .knob svg{width:12px;height:12px}
-[data-theme=night] .tsw .knob{transform:translateX(18px);color:var(--blue)}
+[data-theme=night] .tsw .knob{transform:translateX(22px);color:var(--blue)}
 .tsw:hover{border-color:var(--muted)}
 .brand{flex:1;min-width:0;background:none;border:0;text-align:left;padding:0;line-height:1.15}
 .brand b{display:block;font-size:17px;font-weight:600;color:var(--blue)}
@@ -422,6 +422,7 @@ main{transition:margin-left var(--dur) var(--ease)}
 html.mapmode #rail::after{content:"";display:block;flex:none;height:10px}
 #btnLang{position:relative;width:46px;height:24px;padding:0;gap:0;border-radius:999px;border:1px solid var(--line);background:var(--panel);display:inline-block;flex:none}#btnLang .lflag{position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='15 0 30 30'%3E%3CclipPath id='t'%3E%3Cpath d='M30%2C15h30v15zv15h-30zh-30v-15zv-15h30z'/%3E%3C/clipPath%3E%3Cpath d='M0%2C0v30h60v-30z' fill='%23012169'/%3E%3Cpath d='M0%2C0L60%2C30M60%2C0L0%2C30' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0%2C0L60%2C30M60%2C0L0%2C30' clip-path='url%28%23t%29' stroke='%23C8102E' stroke-width='4'/%3E%3Cpath d='M30%2C0v30M0%2C15h60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30%2C0v30M0%2C15h60' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E") center/cover no-repeat;box-shadow:0 1px 3px rgba(0,0,0,.25),0 0 0 .5px rgba(0,0,0,.15);transition:transform .25s ease}html[lang=it] #btnLang .lflag{transform:translateX(22px);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 3'%3E%3Cpath fill='%23009246' d='M0 0h1v3H0z'/%3E%3Cpath fill='%23fff' d='M1 0h1v3H1z'/%3E%3Cpath fill='%23CE2B37' d='M2 0h1v3H2z'/%3E%3C/svg%3E")}#btnLang #lCode{position:absolute;top:50%;right:4px;transform:translateY(-50%);font-size:10px;font-weight:700;letter-spacing:.08em;line-height:1;color:var(--blue)}html[lang=it] #btnLang #lCode{right:auto;left:6.5px}#btnLang:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
 #langMenu{position:fixed;z-index:60;min-width:150px;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:0 8px 22px rgba(20,16,12,.18);padding:4px;opacity:0;transform:translateY(-4px);pointer-events:none;transition:opacity .15s ease,transform .15s ease}#langMenu.on{opacity:1;transform:none;pointer-events:auto}#langMenu button{display:flex;align-items:center;gap:9px;width:100%;padding:8px 9px;border:0;border-radius:8px;background:none;font-family:inherit;font-size:13px;color:var(--ink);text-align:left;cursor:pointer}#langMenu button:hover{background:var(--panel)}#langMenu button.on{background:var(--panel);color:var(--blue);font-weight:600}#langMenu .fl{width:18px;height:18px;border-radius:50%;flex:none;background:center/cover no-repeat;box-shadow:0 0 0 .5px rgba(0,0,0,.2)}#langMenu .fl-en{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='15 0 30 30'%3E%3CclipPath id='t'%3E%3Cpath d='M30%2C15h30v15zv15h-30zh-30v-15zv-15h30z'/%3E%3C/clipPath%3E%3Cpath d='M0%2C0v30h60v-30z' fill='%23012169'/%3E%3Cpath d='M0%2C0L60%2C30M60%2C0L0%2C30' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0%2C0L60%2C30M60%2C0L0%2C30' clip-path='url%28%23t%29' stroke='%23C8102E' stroke-width='4'/%3E%3Cpath d='M30%2C0v30M0%2C15h60' stroke='%23fff' stroke-width='10'/%3E%3Cpath d='M30%2C0v30M0%2C15h60' stroke='%23C8102E' stroke-width='6'/%3E%3C/svg%3E")}#langMenu .fl-it{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 3'%3E%3Cpath fill='%23009246' d='M0 0h1v3H0z'/%3E%3Cpath fill='%23fff' d='M1 0h1v3H1z'/%3E%3Cpath fill='%23CE2B37' d='M2 0h1v3H2z'/%3E%3C/svg%3E")}#langMenu .ck{margin-left:auto;font-size:13px;color:var(--blue);visibility:hidden}#langMenu button.on .ck{visibility:visible}@media (prefers-reduced-motion:reduce){#langMenu{transition:none}}
+.tsw .topp{position:absolute;top:50%;right:7px;transform:translateY(-50%);display:grid;place-items:center;color:var(--muted);opacity:.55;pointer-events:none}.tsw .topp svg{width:12px;height:12px}[data-theme=night] .tsw .topp{right:auto;left:7px}
 @keyframes mbtn{from{opacity:0;transform:rotate(-90deg) scale(.6)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){#rail,main,#scrim,#rail *{transition:none!important}#btnMenu svg{animation:none}}
 @media print{
@@ -444,7 +445,7 @@ html.mapmode #rail::after{content:"";display:block;flex:none;height:10px}
   <button class="ibtn" id="btnMenu" aria-expanded="false" aria-controls="rail"></button>
   <button class="brand" id="brand"><b>Central Penthouse <i class="l2">at Teatro Massimo</i></b><span id="crumb"></span></button>
   <button class="lbtn" id="btnLang" type="button"><span class="lflag" aria-hidden="true"></span><span id="lCode">EN</span></button>
-  <button class="tsw" id="btnTheme" type="button" role="switch"><span class="knob"></span></button>
+  <button class="tsw" id="btnTheme" type="button" role="switch"><span class="knob"></span><span class="topp" aria-hidden="true"></span></button>
 </div></div>
 <div id="scrim" data-hb></div>
 <nav id="rail" aria-label="Indice" data-hb></nav>
@@ -850,7 +851,7 @@ function render(){
  app.innerHTML=`<div class="page" data-acc="${s?s.acc:'blue'}">${hd}${s?chips(s):''}${body}</div>`+(missing.length?`<div class="err">${missing.join(', ')}</div>`:'');
  document.getElementById('crumb').textContent=s?tr(...s.t):'Palermo';
  document.getElementById('rail').innerHTML=rail();setMenu(false);
- const bt=document.getElementById('btnTheme');bt.firstChild.innerHTML=ic(theme==='day'?'sun':'moon');bt.setAttribute('aria-checked',theme==='night');bt.setAttribute('aria-label',lang==='it'?'Modalità notte':'Night mode');
+ const bt=document.getElementById('btnTheme');bt.firstChild.innerHTML=ic(theme==='day'?'sun':'moon');bt.querySelector('.topp').innerHTML=ic(theme==='day'?'moon':'sun');bt.setAttribute('aria-checked',theme==='night');bt.setAttribute('aria-label',lang==='it'?'Modalità notte':'Night mode');
  bt.setAttribute('aria-label',theme==='day'?tr('Switch to night mode','Passa alla modalità notte'):tr('Switch to day mode','Passa alla modalità giorno'));bt.title=bt.getAttribute('aria-label');
  document.getElementById('lCode').textContent=lang.toUpperCase();document.getElementById('btnLang').setAttribute('aria-label',lang==='it'?'Lingua: italiano. Passa all’inglese':'Language: English. Switch to Italian');
  document.title=(s?tr(...s.t)+' – ':'')+'Housebook – Central Penthouse at Teatro Massimo';
