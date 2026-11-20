@@ -491,7 +491,7 @@ const SECTIONS=[
  {id:'day-trips',n:'07',acc:'blue',icon:'route',t:['Day Trips','Gite fuori porta'],f:['Day Trips','Gite fuori porta'],s:['Mondello and Monreale by bus','Mondello e Monreale in autobus'],
   toc:[['Bus to Mondello Beach','Autobus per la spiaggia di Mondello','mondello'],['Bus to Duomo di Monreale','Autobus per il Duomo di Monreale','monreale']]},
  {id:'eat-drink',n:'08',acc:'wine',icon:'utensils',t:['Eat & Drink','Mangiare e bere'],f:['Eat & Drink','Mangiare e bere'],s:['Restaurants and pizzerias close by','Ristoranti e pizzerie nelle vicinanze'],
-  toc:[['Restaurants & pizzerias','Ristoranti e pizzerie','p14'],['Street food','Street food','streetfood'],['Drinks','Drink','drinks']]}
+  toc:[['Restaurants & Pizzerias','Ristoranti e pizzerie','p14'],['Street food','Street food','streetfood'],['Drinks','Drink','drinks']]}
 ];
 const ORDER=['home',...SECTIONS.map(s=>s.id)];
 const label=id=>id==='home'?'Home':tr(...SECTIONS.find(s=>s.id===id).t);
@@ -779,7 +779,7 @@ function current(){const h=(location.hash||'').replace('#','');return ORDER.incl
 let page=current()||'home';
 function nav(id){const i=ORDER.indexOf(id),pv=ORDER[i-1],nx=ORDER[i+1];const t=x=>{const s=SECTIONS.find(y=>y.id===x);return s?`<small>${s.n}</small>${tr(...s.t)}`:`<small>&nbsp;</small>Home`};
  return `<nav class="pn">${pv?`<a href="#${pv}" data-go="${pv}">${ic('chevL')}<span>${t(pv)}</span></a>`:'<span></span>'}<a class="ibtn" href="#home" data-go="home" aria-label="Home">${ic('list')}</a>${nx?`<a href="#${nx}" data-go="${nx}"><span>${t(nx)}</span>${ic('chevR')}</a>`:'<span></span>'}</nav>`}
-const RSUB={sights:[['City centre and Old town','Centro e città vecchia','p10'],['Arab-Norman Palermo','Palermo arabo-normanna','p11'],['Markets and seafront','Mercati e lungomare','p12']],'eat-drink':[['Restaurants & pizzerias','Ristoranti e pizzerie','p14'],['Street food','Street food','streetfood'],['Drinks','Drink','drinks']]};
+const RSUB={sights:[['City centre and Old town','Centro e città vecchia','p10'],['Arab-Norman Palermo','Palermo arabo-normanna','p11'],['Markets and seafront','Mercati e lungomare','p12']],'eat-drink':[['Restaurants & Pizzerias','Ristoranti e pizzerie','p14'],['Street food','Street food','streetfood'],['Drinks','Drink','drinks']]};
 function rail(){const sid=page;let k=0;const item=(id,n,acc,icon,name)=>`<a style="--i:${k++}" class="ri${id===sid?' on':''}" data-acc="${acc}" href="#${id}" data-go="${id}" aria-label="${name}"${id===sid?' aria-current="page"':''}><span class="rn">${n}</span>${ic(icon)}<span class="nm">${name}</span></a>`+(RSUB[id]?`<div class="subs"><div>${RSUB[id].map(([en,it,an])=>`<a href="#${id}" data-go="${id}" data-anchor="${an}" style="--i:${k++}">${tr(en,it)}</a>`).join('')}</div></div>`:'');
  const s=SECTIONS.find(x=>x.id===sid);
  return `<div class="hd"><div><p class="eyebrow"><span class="hbw">Housebook</span> · Palermo</p></div></div>`
@@ -1114,7 +1114,7 @@ const CATS=[
  {id:'sights',acc:'terra',icon:'landmark',t:['Main Sights','Cosa vedere'],n:'05'},
  {id:'offbeat',acc:'cinnamon',icon:'signpost',t:['Off the Beaten Track','Fuori dai soliti percorsi'],n:'06'},
  {id:'daytrips',acc:'blue',icon:'route',t:['Day Trips','Gite fuori porta'],n:'07'},
- {id:'restaurant',acc:'wine',icon:'restaurant',t:['Restaurants & pizzerias','Ristoranti e pizzerie'],n:'08'},
+ {id:'restaurant',acc:'wine',icon:'restaurant',t:['Restaurants & Pizzerias','Ristoranti e pizzerie'],n:'08'},
  {id:'streetfood',acc:'wine',icon:'fries',t:['Street food','Street food'],n:'08'},
  {id:'drinks',acc:'wine',icon:'cocktail',t:['Drinks','Drink'],n:'08'}];
 const CAT=Object.fromEntries(CATS.map(c=>[c.id,c]));
