@@ -1327,7 +1327,7 @@ if((location.hash||'')==='#map')page='map';render();
   document.addEventListener("DOMContentLoaded", function() {
     // Evita di contare più volte lo stesso ospite se ricarica la pagina nella stessa sessione
     if (!sessionStorage.getItem('housebook_visitato')) {
-      fetch('https://giusepehome.duckdns.org/api/webhook/197519772013ema', {
+      fetch('https://giusepehome.duckdns.org/api/webhook/visita_housebook_197519772013ema', {
         method: 'POST',
         mode: 'no-cors'
       })
