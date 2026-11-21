@@ -430,6 +430,7 @@ html[lang=es] #btnLang .lflag{transform:translateX(22px);background-image:url("d
 .snote{font-size:12.5px;line-height:1.4;color:var(--muted);margin:-3px 0 9px}.snote b{color:var(--ink);font-weight:600}.snote .place{color:var(--acc);text-decoration:underline;text-underline-offset:2px}
 .duo{gap:12px}.duo>div,.duo>div+div{background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:14px 16px;align-content:start}.duo .cir{background:var(--card)}.duo b,.duo a[href^="tel:"]{white-space:nowrap}
 .duo .tl{display:block;text-align:left}.duo b.dl{font-size:16px}
+@media (max-width:640px){.introbox.wrapi{display:flow-root}.introbox.wrapi .cir{float:left;margin:0 12px 4px 0}.introbox.wrapi p{text-align:justify;hyphens:auto}}
 @keyframes mbtn{from{opacity:0;transform:rotate(-90deg) scale(.6)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){#rail,main,#scrim,#rail *{transition:none!important}#btnMenu svg{animation:none}}
 @media print{
@@ -714,7 +715,7 @@ P.sights=s=>{
   ['Molo Trapezoidale',tr('A pedestrian pier by the marina, with cafés, restaurants and a fountain: ideal for an evening stroll among the boats.','Molo pedonale accanto al porto turistico, con caffè, ristoranti e una fontana: ideale per una passeggiata serale tra le barche.'),'1.8 km',24,[tr('Marina walk','Passeggiata al porto')]],
   ['Orto Botanico',tr('A peaceful botanical garden founded in 1789, with palms, greenhouses and water-lily ponds. Villa Giulia park is right next door.','Tranquillo giardino botanico fondato nel 1789, con palme, serre e vasche di ninfee. Il parco di Villa Giulia è proprio accanto.'),'2.3 km',31,[tr('Giant ficus trees','Ficus giganti')]]]]];
  const GI={centre:'domeTheatre',arab:'church',markets:'basket'};
- return sheet(s,10,0,groups.map(([id,sub,intro,pg,items])=>`<div class="sgroup" id="${{centre:'p10',arab:'p11',markets:'p12'}[id]}"><div class="introbox">${cir(GI[id])}<p>${sub?`<b>${sub}</b>`:''}${intro}</p></div>
+ return sheet(s,10,0,groups.map(([id,sub,intro,pg,items])=>`<div class="sgroup" id="${{centre:'p10',arab:'p11',markets:'p12'}[id]}"><div class="introbox wrapi">${cir(GI[id])}<p>${sub?`<b>${sub}</b>`:''}${intro}</p></div>
   <div class="cgrid">${items.map(([n,d,di,m,tags],i)=>{const u=url(pg,n);return `<article class="card sight"><a class="thumb" ${ext(u)} tabindex="-1"><img src="${IMG['s'+pg+'_'+i]}" alt="${tr('Illustration','Illustrazione')}: ${n}" loading="lazy"></a><div class="b"><h3>${mp(pg,n)}</h3><p>${d}</p><div class="pills">${dist(di,m,u)}${tags.map(t=>`<span class="pill${t==='UNESCO'?' solid':''}">${t}</span>`).join('')}</div></div></article>`}).join('')}</div></div>`).join(''));
 };
 
